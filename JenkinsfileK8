@@ -1,5 +1,12 @@
 pipeline {
    agent any
+	environment {
+		PROJECT_ID = 'DevopsSunil'
+		BUILD_ID='v1'
+		CLUSTER_NAME = 'k8-sv-cluster1' 
+		LOCATION = 'us-central1-c' 
+		CREDENTIALS_ID = 'devopssunil'
+	}
 stages {
     stage('Run gcloud Version') {
         steps {
@@ -17,5 +24,21 @@ stages {
             sh './k8-createinfra.sh'
          }
       }
+     stage('Deploy to K8 Clusters') {
+	steps{
+		echo "Deployment started"
+		sh 'ls -ltr'
+		sh 'pwd'
+		sh "sed -i 's/tagversion/${env.BUILD_ID}/g' deployment.yaml" 
+		step([$class: 'KubernetesEngineBuilder', 
+		   projectId: env.PROJECT_ID, 
+		   clusterName: env.CLUSTER_NAME, 
+		   zone: 'us-central1-c', 
+		   manifestPattern: 'deployment.yaml', 
+		   credentialsId: 'devopssunil', 
+		   verifyDeployments: true])
+		echo "Deployment Finished"
+		}
+		}
    }
 }
