@@ -2,9 +2,9 @@ pipeline {
     agent any
 	environment {
 		PROJECT_ID = 'devopssunil'
-		BUILD_ID=3
-		CLUSTER_NAME = 'K8-cluster-sv' 
-		LOCATION = 'europe-west1-b' 
+		BUILD_ID='v1'
+		CLUSTER_NAME = 'k8-sv-cluster1' 
+		LOCATION = 'us-central-1c' 
 		CREDENTIALS_ID = 'kubernetes'
 	} 
 	stages {
