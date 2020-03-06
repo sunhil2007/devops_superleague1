@@ -14,7 +14,7 @@ stages {
 	    sh 'ls -ltr'
 	    sh 'pwd'
 	    sh 'chmod +x k8-createinfra.sh'
-            sh 'k8-createinfra.sh'
+            sh './k8-createinfra.sh'
          }
       }
    }
