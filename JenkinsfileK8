@@ -1,9 +1,7 @@
 pipeline {
    agent any
-
 stages {
     stage('Run gcloud Version') {
-
         steps {
             withEnv(['GCLOUD_PATH=/usr/bin']) {
                 sh '$GCLOUD_PATH/gcloud --version'
@@ -13,10 +11,9 @@ stages {
     stage('Run Shell in Gcloud') {
         steps {
             echo "Deployment started"
-			   sh 'ls -ltr'
-			   sh 'pwd'
+	    sh 'ls -ltr'
+	    sh 'pwd'
             sh 'k8-createinfra.sh'
-            }
          }
       }
    }
