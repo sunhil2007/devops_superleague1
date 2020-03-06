@@ -11,6 +11,6 @@ spec:
     spec:
       containers:
       - name: c1-webapp
-        image: sunhil2007/webserver:v1
+        image: sunhil2007/webserver:tagversion
         ports:
         - containerPort: 80
