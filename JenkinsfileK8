@@ -8,18 +8,15 @@ stages {
             withEnv(['GCLOUD_PATH=/usr/bin']) {
                 sh '$GCLOUD_PATH/gcloud --version'
             }
-
-
          }
       }
     stage('Run Shell in Gcloud') {
-
         steps {
-            withEnv(['GCLOUD_PATH=/usr/bin']) {
-                sh 'k8-createinfra.sh'
+            echo "Deployment started"
+			   sh 'ls -ltr'
+			   sh 'pwd'
+            sh 'k8-createinfra.sh'
             }
-
-
          }
       }
    }
