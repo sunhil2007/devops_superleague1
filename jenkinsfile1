@@ -4,7 +4,7 @@ pipeline {
 		PROJECT_ID = 'DevopsSunil'
 		BUILD_ID='v1'
 		CLUSTER_NAME = 'k8-sv-cluster1' 
-		LOCATION = 'us-central-1c' 
+		LOCATION = 'us-central1-c' 
 		CREDENTIALS_ID = 'devopssunil'
 	} 
 	stages {
