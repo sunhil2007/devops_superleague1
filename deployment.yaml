@@ -1,0 +1,16 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: webapp-d2
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: webapp-d2-lbl
+    spec:
+      containers:
+      - name: c1-webapp
+        image: sunhil2007/webserver:v1
+        ports:
+        - containerPort: 80
