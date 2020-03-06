@@ -12,5 +12,15 @@ stages {
 
          }
       }
+    stage('Run Shell in Gcloud') {
+
+        steps {
+            withEnv(['GCLOUD_PATH=/usr/bin']) {
+                sh 'k8-createinfra.sh'
+            }
+
+
+         }
+      }
    }
 }
