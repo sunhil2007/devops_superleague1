@@ -5,7 +5,7 @@ pipeline {
 		BUILD_ID='v1'
 		CLUSTER_NAME = 'k8-sv-cluster1' 
 		LOCATION = 'us-central-1c' 
-		CREDENTIALS_ID = 'kubernetes'
+		CREDENTIALS_ID = 'devopssunil'
 	} 
 	stages {
       stage('Deploy to K8 Clusters') {
