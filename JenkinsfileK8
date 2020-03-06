@@ -1,0 +1,16 @@
+pipeline {
+   agent any
+
+stages {
+    stage('Run gcloud Version') {
+
+        steps {
+            withEnv(['GCLOUD_PATH=/usr/bin']) {
+                sh '$GCLOUD_PATH/gcloud --version'
+            }
+
+
+         }
+      }
+   }
+}
