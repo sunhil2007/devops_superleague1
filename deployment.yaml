@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
@@ -14,3 +15,15 @@ spec:
         image: sunhil2007/webserver:tagversion
         ports:
         - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: webapp-svc2
+spec:
+  selector:
+    app: webapp-d2-lbl
+  type: LoadBalancer
+  ports:
+    - port: 8080
+      targetPort: 80
