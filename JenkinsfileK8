@@ -2,7 +2,7 @@ pipeline {
    agent any
 	environment {
 		PROJECT_ID = 'k8-sunil'
-		BUILD_ID='v1'
+		BUILD_ID='v2'
 		CLUSTER_NAME = 'k8-sv-cluster-test' 
 		LOCATION = 'us-central1-c' 
 		CREDENTIALS_ID = 'k8-sunil'
